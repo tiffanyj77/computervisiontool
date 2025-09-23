@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OpenCV.js + MediaPipe FaceMesh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- OpenCV.js -->
+  <script async src="https://docs.opencv.org/4.x/opencv.js"></script>
+  <!-- MediaPipe FaceMesh (classic solution) -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Face Outline & Eye Guide (Browser)</h1>
+    <div id="status">Loading libs…</div>
+  </header>
+
+  <section class="panel">
+    <input type="file" id="file" accept="image/*" />
+    <button id="runBtn" disabled>Process</button>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h3>Original</h3>
+      <img id="srcImg" alt="src" />
+      <canvas id="srcCanvas"></canvas>
+    </div>
+    <div class="card">
+      <h3>Result</h3>
+      <canvas id="dstCanvas"></canvas>
+      <a id="download" class="btn" download="result.png">Download PNG</a>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>

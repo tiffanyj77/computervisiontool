@@ -19,14 +19,6 @@ const FACEMESH_FACE_OVAL = [
   [109,10]  // closed loop
 ];
 
-// --------- OpenCV readiness ----------
-window.Module = {
-  onRuntimeInitialized() {
-    cvReady = true;
-    maybeEnable();
-  }
-};
-
 // --------- MediaPipe FaceMesh setup ----------
 function setupFaceMesh() {
   faceMesh = new FaceMesh.FaceMesh({

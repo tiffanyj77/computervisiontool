@@ -171,7 +171,7 @@ async function ensureCascadeLoaded(url, vfsName){
 // Run MediaPipe FaceMesh on a static image element
 function runFaceMesh(imageEl){
   return new Promise((resolve) => {
-    const fm = new FaceMesh.FaceMesh({
+    const fm = new FaceMesh ({
       locateFile: f => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${f}`
     });
     fm.setOptions({maxNumFaces:1, refineLandmarks:true});

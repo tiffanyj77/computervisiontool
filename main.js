@@ -21,7 +21,7 @@ const FACEMESH_FACE_OVAL = [
 
 // --------- MediaPipe FaceMesh setup ----------
 function setupFaceMesh() {
-  faceMesh = new FaceMesh.FaceMesh({
+  faceMesh = new FaceMesh({ // remove the second FaceMesh bc FaceMesh is global var
     locateFile: f => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${f}`
   });
   faceMesh.setOptions({

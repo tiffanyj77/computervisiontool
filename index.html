@@ -1,15 +1,28 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>OpenCV.js + MediaPipe FaceMesh</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <!-- OpenCV.js -->
-  <script async src="https://docs.opencv.org/4.x/opencv.js"></script>
-  <!-- MediaPipe FaceMesh (classic solution) -->
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>OpenCV.js + MediaPipe FaceMesh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- 💡 MUST define Module BEFORE loading OpenCV.js -->
+    <script>
+      window.Module = {
+        onRuntimeInitialized() {
+          console.log("✅ OpenCV ready");
+          cvReady = true;
+          maybeEnable();
+        }
+      };
+    </script>
+
+    <!-- ✅ Load OpenCV.js AFTER defining Module -->
+    <script src="https://docs.opencv.org/4.x/opencv.js"></script>
+
+    <!-- MediaPipe FaceMesh -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+  </head>
 <body>
   <header>
     <h1>Face Outline & Eye Guide (Browser)</h1>

@@ -1,0 +1,7 @@
+.DS_Store
+**/.DS_Store
+assets/env/
+assets/user_uploads/
+dev/
+__pycache__/
+*.pyc
